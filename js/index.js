@@ -37,6 +37,11 @@ function displayCurrentWeather(currentObj) {
 </div>`);
 }
 
+//function to display 5 day forecast
+// function displayForecast() {
+
+// }
+
 function getWeather(city) {
   // fetch forecast for chosen city from server
   $.get(
@@ -45,6 +50,13 @@ function getWeather(city) {
     // get current weather
     console.log(currentWeather);
     displayCurrentWeather(currentWeather);
+    $.get(
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${currentWeather.coord.lat}&lon=${currentWeather.coord.lon}&appid=${apiKey}&units=metric`
+    ).then(function (fiveDayWeather) {
+      //get 5 day forecast
+      console.log(fiveDayWeather);
+      // displayForecastWeather(fiveDayWeather.list);
+    });
   });
 }
 
