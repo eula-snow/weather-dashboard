@@ -1,0 +1,31 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.weather-header {
+  background-image: linear-gradient(to right, #3360b9, #210b4e);
+}
+
+#search-input {
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+#search-button {
+  background-color: #5098e6;
+  border-radius: 5px;
+  margin-top: 10px;
+  color: white;
+  font-size: 12px;
+}
+
+#today {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+#forecast-header {
+  padding-top: 10px !important;
+}
