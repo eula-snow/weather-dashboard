@@ -11,13 +11,12 @@ body {
 .weather-header {
   background-image: linear-gradient(to right, #3360b9, #210b4e);
 }
-.input-group {
-  display: flex;
-  flex-direction: column;
-}
+
 #search-input {
   border-radius: 5px;
   border: 1px solid black;
+  width: 125%;
+  padding: 8px;
 }
 
 #search-button {
@@ -26,6 +25,12 @@ body {
   margin-top: 10px;
   color: white;
   font-size: 12px;
+}
+
+.citySearch {
+  background-color: darkgrey !important;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 #today {
