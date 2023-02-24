@@ -81,6 +81,10 @@ function updateSearchHistory(city) {
   // get json string containing the array of cities
   var citiesStr = localStorage.getItem("cities");
   var citiesArr = citiesStr != null ? JSON.parse(citiesStr) : [];
+  //don't save if the input doesn't contain any characters
+  if (city.length === 0) {
+    return;
+  }
   if (citiesArr.includes(city)) {
     return false;
   }
