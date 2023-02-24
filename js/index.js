@@ -38,9 +38,22 @@ function displayCurrentWeather(currentObj) {
 }
 
 //function to display 5 day forecast
-// function displayForecast() {
-
-// }
+function displayForecast(futureObj) {
+  $("#forecast").html(""); //clears the data
+  for (var i = 0; i < futureObj.length; i += 8) {
+    $("#forecast").append(`
+        <div class="forecastBlock">
+        <p></p>
+        <img src='${
+          "https://openweathermap.org/img/w/" + futureObj[i].weather[0].icon
+        }.png'>
+              <p>Temp: ${futureObj[i].main.temp} <span>&#176;</span>C</p>
+              <p>Wind: ${futureObj[i].wind.speed} KPH</p>
+              <p>Humidity: ${futureObj[i].main.humidity}%</p>  
+        </div>     
+`);
+  }
+}
 
 function getWeather(city) {
   // fetch forecast for chosen city from server
@@ -55,7 +68,7 @@ function getWeather(city) {
     ).then(function (fiveDayWeather) {
       //get 5 day forecast
       console.log(fiveDayWeather);
-      // displayForecastWeather(fiveDayWeather.list);
+      displayForecast(fiveDayWeather.list);
     });
   });
 }

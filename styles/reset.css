@@ -15,7 +15,7 @@ body {
 #search-input {
   border-radius: 5px;
   border: 1px solid black;
-  width: 125%;
+  width: 100%;
   padding: 8px;
 }
 
@@ -38,6 +38,35 @@ body {
   border: 1px solid black;
 }
 
+#forecast {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
 #forecast-header {
   padding-top: 10px !important;
+}
+
+.forecastBlock {
+  padding: 5px;
+  padding-right: 30px;
+  border: 1px solid black;
+  background-color: #2d3e50;
+  color: white;
+  margin-right: 30px;
+}
+
+.forecastBlock:last-child {
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  #forecast {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .forecastBlock {
+    margin-top: 5px;
+    margin-right: 20px;
+  }
 }
