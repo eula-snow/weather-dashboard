@@ -13,7 +13,6 @@ var history = $("#history");
 function search(event) {
   event.preventDefault();
   var city = searchInput.val();
-
   console.log("search: ");
   console.log(city);
   updateSearchHistory(city);
@@ -27,7 +26,9 @@ function displayCurrentWeather(currentObj) {
   today.html("");
   today.append(`
         <div>
-        <h3>${currentObj.name} <img src='${
+        <h3>${currentObj.name} (${moment(
+    new Date(currentObj.dt * 1000).toUTCString()
+  ).format("DD/MM/YYYY")}) <img src='${
     "https://openweathermap.org/img/w/" + currentObj.weather[0].icon
   }.png'></h3>
         
@@ -43,7 +44,9 @@ function displayForecast(futureObj) {
   for (var i = 0; i < futureObj.length; i += 8) {
     $("#forecast").append(`
         <div class="forecastBlock">
-        <p></p>
+        <strong>${moment(new Date(futureObj[i].dt * 1000).toUTCString()).format(
+          "DD/MM/YYYY"
+        )}</strong>
         <img src='${
           "https://openweathermap.org/img/w/" + futureObj[i].weather[0].icon
         }.png'>

@@ -12,10 +12,24 @@ body {
   background-image: linear-gradient(to right, #3360b9, #210b4e);
 }
 
+#search-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-inline {
+  width: 100%;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 #search-input {
   border-radius: 5px;
   border: 1px solid black;
-  width: 100%;
   padding: 8px;
 }
 
@@ -24,7 +38,7 @@ body {
   border-radius: 5px;
   margin-top: 10px;
   color: white;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .citySearch {
@@ -56,7 +70,7 @@ body {
   margin-right: 30px;
 }
 
-.forecastBlock:last-child {
+.forecastBlock {
   margin-right: 10px;
 }
 
@@ -67,6 +81,6 @@ body {
   }
   .forecastBlock {
     margin-top: 5px;
-    margin-right: 20px;
+    margin-right: 10px;
   }
 }
