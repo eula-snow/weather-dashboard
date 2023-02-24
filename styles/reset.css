@@ -4,10 +4,17 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: sans-serif;
+}
+
 .weather-header {
   background-image: linear-gradient(to right, #3360b9, #210b4e);
 }
-
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
 #search-input {
   border-radius: 5px;
   border: 1px solid black;
